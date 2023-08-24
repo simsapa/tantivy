@@ -1,6 +1,6 @@
 [package]
 name = "tantivy"
-version = "0.20.2"
+version = "0.20.2-pre.1"
 authors = ["Paul Masurel <paul.masurel@gmail.com>"]
 license = "MIT"
 categories = ["database-implementations", "data-structures"]
@@ -35,7 +35,7 @@ fs4 = { version = "0.6.3", optional = true }
 levenshtein_automata = "0.2.1"
 uuid = { version = "1.0.0", features = ["v4", "serde"] }
 crossbeam-channel = "0.5.4"
-rust-stemmers = "1.2.0"
+rust-stemmers = { git = "https://github.com/simsapa/rust-stemmers.git", branch = "simsapa" }
 downcast-rs = "1.2.0"
 bitpacking = { version = "0.8.4", default-features = false, features = ["bitpacker4x"] }
 census = "0.4.0"

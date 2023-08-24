@@ -9,6 +9,7 @@ LANGUAGES = [
     "hungarian",
     "italian",
     "norwegian",
+    "pali",
     "portuguese",
     "russian",
     "spanish",

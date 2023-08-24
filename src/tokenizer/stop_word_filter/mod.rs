@@ -53,6 +53,7 @@ impl StopWordFilter {
             Language::Hungarian => stopwords::HUNGARIAN,
             Language::Italian => stopwords::ITALIAN,
             Language::Norwegian => stopwords::NORWEGIAN,
+            Language::Pali => stopwords::PALI,
             Language::Portuguese => stopwords::PORTUGUESE,
             Language::Russian => stopwords::RUSSIAN,
             Language::Spanish => stopwords::SPANISH,
