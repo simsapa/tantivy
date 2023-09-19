@@ -25,15 +25,15 @@
 mod histogram;
 mod range;
 mod term_agg;
+mod term_missing_agg;
 
 use std::collections::HashMap;
 
-pub(crate) use histogram::SegmentHistogramCollector;
 pub use histogram::*;
-pub(crate) use range::SegmentRangeCollector;
 pub use range::*;
 use serde::{de, Deserialize, Deserializer, Serialize, Serializer};
 pub use term_agg::*;
+pub use term_missing_agg::*;
 
 /// Order for buckets in a bucket aggregation.
 #[derive(Clone, Copy, Debug, PartialEq, Serialize, Deserialize, Default)]

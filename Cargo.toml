@@ -1,6 +1,6 @@
 [package]
 name = "tantivy"
-version = "0.20.2-pre.1"
+version = "0.21.0-pre.1"
 authors = ["Paul Masurel <paul.masurel@gmail.com>"]
 license = "MIT"
 categories = ["database-implementations", "data-structures"]
@@ -54,13 +54,13 @@ measure_time = "0.8.2"
 async-trait = "0.1.53"
 arc-swap = "1.5.0"
 
-columnar = { version= "0.1", path="./columnar", package ="tantivy-columnar" }
-sstable = { version= "0.1", path="./sstable", package ="tantivy-sstable", optional = true }
-stacker = { version= "0.1", path="./stacker", package ="tantivy-stacker" }
-query-grammar = { version= "0.20.0", path="./query-grammar", package = "tantivy-query-grammar" }
-tantivy-bitpacker = { version= "0.4", path="./bitpacker" }
-common = { version= "0.5", path = "./common/", package = "tantivy-common" }
-tokenizer-api = { version= "0.1", path="./tokenizer-api", package="tantivy-tokenizer-api" }
+columnar = { version= "0.2", path="./columnar", package ="tantivy-columnar" }
+sstable = { version= "0.2", path="./sstable", package ="tantivy-sstable", optional = true }
+stacker = { version= "0.2", path="./stacker", package ="tantivy-stacker" }
+query-grammar = { version= "0.21.0", path="./query-grammar", package = "tantivy-query-grammar" }
+tantivy-bitpacker = { version= "0.5", path="./bitpacker" }
+common = { version= "0.6", path = "./common/", package = "tantivy-common" }
+tokenizer-api = { version= "0.2", path="./tokenizer-api", package="tantivy-tokenizer-api" }
 sketches-ddsketch = { version = "0.2.1", features = ["use_serde"] }
 futures-util = { version = "0.3.28", optional = true }
 
@@ -73,14 +73,16 @@ maplit = "1.0.2"
 matches = "0.1.9"
 pretty_assertions = "1.2.1"
 proptest = "1.0.0"
-criterion = "0.5"
 test-log = "0.2.10"
 env_logger = "0.10.0"
-pprof = { git = "https://github.com/PSeitz/pprof-rs/", rev = "53af24b", features = ["flamegraph", "criterion"] } # temp fork that works with criterion 0.5
 futures = "0.3.21"
 paste = "1.0.11"
 more-asserts = "0.3.1"
 rand_distr = "0.4.3"
+
+[target.'cfg(not(windows))'.dev-dependencies]
+criterion = "0.5"
+pprof = { git = "https://github.com/PSeitz/pprof-rs/", rev = "53af24b", features = ["flamegraph", "criterion"] } # temp fork that works with criterion 0.5
 
 [dev-dependencies.fail]
 version = "0.5.0"
@@ -126,7 +128,7 @@ members = ["query-grammar", "bitpacker", "common", "ownedbytes", "stacker", "sst
 [[test]]
 name = "failpoints"
 path = "tests/failpoints/mod.rs"
-required-features = ["fail/failpoints"]
+required-features = ["failpoints"]
 
 [[bench]]
 name = "analyzer"
