@@ -1,6 +1,6 @@
 [package]
 name = "tantivy"
-version = "0.21.0-pre.1"
+version = "0.21.0-pre.2"
 authors = ["Paul Masurel <paul.masurel@gmail.com>"]
 license = "MIT"
 categories = ["database-implementations", "data-structures"]
@@ -44,7 +44,7 @@ thiserror = "1.0.30"
 htmlescape = "0.3.1"
 fail = { version = "0.5.0", optional = true }
 murmurhash32 = "0.3.0"
-time = { version = "0.3.10", features = ["serde-well-known"] }
+time = { version = "0.3.36", features = ["serde-well-known"] }
 smallvec = "1.8.0"
 rayon = "1.5.2"
 lru = "0.11.0"
@@ -63,6 +63,11 @@ common = { version= "0.6", path = "./common/", package = "tantivy-common" }
 tokenizer-api = { version= "0.2", path="./tokenizer-api", package="tantivy-tokenizer-api" }
 sketches-ddsketch = { version = "0.2.1", features = ["use_serde"] }
 futures-util = { version = "0.3.28", optional = true }
+
+[patch.crates-io]
+# ZSTD_c_experiencelParam6 issue not found
+# https://github.com/gyscos/zstd-rs/issues/270
+zstd-sys = { git = "https://github.com/gyscos/zstd-rs.git", rev = "1779b385b42b08f958b767a37878dfa6a0b4f6a4" }
 
 [target.'cfg(windows)'.dependencies]
 winapi = "0.3.9"
